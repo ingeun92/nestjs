@@ -1,4 +1,5 @@
 import { Injectable } from "@nestjs/common";
+import { User } from "./interfaces/user.interface";
 
 @Injectable()
 export class UsersService {
@@ -6,11 +7,13 @@ export class UsersService {
     return "Hello World!";
   }
 
-  getIng(): string {
-    return "Ing";
+  private readonly users: User[] = [];
+
+  create(user: User) {
+    this.users.push(user);
   }
 
-  getSum(a: number, b: number): number {
-    return a + b;
+  findAll(): User[] {
+    return this.users;
   }
 }

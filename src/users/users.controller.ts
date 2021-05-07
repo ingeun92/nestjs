@@ -1,5 +1,7 @@
-import { Body, Controller, Get, Param, ParseIntPipe } from "@nestjs/common";
+import { Body, Controller, Get, HttpCode, Post } from "@nestjs/common";
 import { UsersService } from "./users.service";
+import { CreateUserDto } from "./dto/users.dto";
+import { User } from "./interfaces/user.interface";
 
 @Controller()
 export class UsersController {
@@ -10,21 +12,19 @@ export class UsersController {
     return this.usersService.getHello();
   }
 
-  @Get("ing")
-  getIng(): string {
-    return this.usersService.getIng();
-  }
-
-  @Get("sum/:x&:y")
-  getSum(
-    @Param("x", ParseIntPipe) x: number,
-    @Param("y", ParseIntPipe) y: number,
-  ): number {
-    return this.usersService.getSum(x, y);
-  }
-
-  @Get("test")
-  getTest(@Body() body: string): string {
+  @Post("test")
+  postTest(@Body() body: string): string {
     return body;
+  }
+
+  @Post()
+  async create(@Body() createUserDto: CreateUserDto) {
+    this.usersService.create(createUserDto);
+    return "Success";
+  }
+
+  @Get("list")
+  async findAll(): Promise<User[]> {
+    return this.usersService.findAll();
   }
 }
