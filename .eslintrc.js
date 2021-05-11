@@ -15,18 +15,18 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.js", "src/metamask/meta.service.js"],
   rules: {
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/quotes": "off",
-    'prettier/prettier': [
-        'error',
-        {
-            endOfLine: 'auto',
-        },
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
     ],
   },
 };

@@ -21,14 +21,17 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
     "@nestjs/mongoose": "^7.2.4",
     "@nestjs/platform-express": "^7.6.15",
+    "metamask-extension-provider": "^3.0.0",
     "mongoose": "^5.12.7",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6"
+    "rxjs": "^6.6.6",
+    "web3": "^1.3.5"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
