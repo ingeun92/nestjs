@@ -15,13 +15,14 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: [".eslintrc.js", "src/metamask/meta.service.js"],
+  ignorePatterns: [".eslintrc.js"],
   rules: {
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/quotes": "double",
+    "@typescript-eslint/semi": "never",
     "prettier/prettier": [
       "error",
       {
@@ -29,4 +30,4 @@ module.exports = {
       },
     ],
   },
-};
+}
